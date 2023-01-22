@@ -17,7 +17,8 @@ def main() -> None:
     print_infos: List[_PrintInfo] = []
     for case in cases:
         output = case.run()
-        returned_expected_output = repr(output) == repr({"s": "test", "c": {"n": 2}})
+        expected_output = {"s": "test", "c": {"n": 2}}
+        returned_expected_output = repr(output) == repr(expected_output)
 
         print_infos.append(
             _PrintInfo(
