@@ -14,10 +14,7 @@ pipenv install -d
 ```
 
 # Running
-make run_pydantic_1.9.0
-make run_pydantic_1.9.2
-make run_pydantic_1.10.0
-
+make run_pydantic_<VERSION>
 # Results
 
 ## pydantic 1.9.0
