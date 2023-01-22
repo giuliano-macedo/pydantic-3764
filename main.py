@@ -17,7 +17,7 @@ def main() -> None:
     print_infos: List[_PrintInfo] = []
     for case in cases:
         output = case.run()
-        returned_expected_output = "_Pydantic__Child" not in repr(output)
+        returned_expected_output = repr(output) == repr({"s": "test", "c": {"n": 2}})
 
         print_infos.append(
             _PrintInfo(
@@ -28,7 +28,7 @@ def main() -> None:
                 returned_expected_output=["No", "Yes"][int(returned_expected_output)],
             )
         )
-    
+
     print(
         tabulate(
             [asdict(p) for p in print_infos],
